@@ -42,6 +42,8 @@ class Serie(Programa):
 
 
 class Play_list:
+
+    
     def __init__(self, nome, programas):
         self.nome = nome
         self.programas = programas
