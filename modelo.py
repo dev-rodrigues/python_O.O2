@@ -40,16 +40,34 @@ class Serie(Programa):
     def __str__(self):
         return f'Nome: {self._nome} - {self.ano} - {self.temporada} temporadas -  Likes: {self._likes}'
 
-##teste
+
+class Play_list:
+    def __init__(self, nome, programas):
+        self.nome = nome
+        self.programas = programas
+
+    def tamanho_playlist(self):
+        return len(self.programas)
+
+##testes
 vingadores = Filme('vingadores - guerra infinita', 2018, 160)
+todo_mundo_em_panico = Filme('Todo Mundo em Panico', 2012, 120)
+homem_aranha = Filme('Homem Aranha', 2013, 150)
+atlanta = Serie('Atlanta', 2017, 2)
+tbbt = Serie('The Big Bang Theory', 2011, 500)
+oitnb = Serie('Orange is the new black', 2017, 4)
+
 vingadores.dar_like()
-
-##teste
-atlanta = Serie('atlanta', 2017, 2)
 atlanta.dar_like()
+tbbt.dar_like()
+tbbt.dar_like()
+tbbt.dar_like()
+tbbt.dar_like()
 atlanta.dar_like()
 
-filmes_e_serie = [vingadores, atlanta]
+filmes_e_serie = [vingadores, atlanta, todo_mundo_em_panico, tbbt, oitnb]
 
-for programa in filmes_e_serie:
+play_list_fim_de_semana = Play_list('fim de semana',filmes_e_serie)
+
+for programa in play_list_fim_de_semana.programas:
     print(programa)
